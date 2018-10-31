@@ -1,0 +1,199 @@
+Docker installation
+-------------------
+
+Host Machine
+------------
+
+Install Ubuntu 16.04 Xenial 16.04 (LTS)
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+sudo reboot
+
+Install packages to allow apt to use a repository over HTTPS
+-------------------------------------------------------------
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+
+Add Docker’s official GPG key:
+------------------------------
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+( Verify that you now have the key with the fingerprint 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88, by searching for the last 8 characters of the fingerprint. )
+
+Use the following command to set up the stable repository
+---------------------------------------------------------
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+
+INSTALL DOCKER CE
+-----------------
+
+sudo apt-get update
+
+Install the latest version of Docker CE
+----------------------------------------
+
+sudo apt-get install docker-ce
+
+
+To install a specific version of Docker CE, list the available versions in the repo, then select and install
+-------------------------------------------------------------------------------------------------------------
+
+apt-cache madison docker-ce
+
+sudo apt-get install docker-ce=<VERSION>
+
+
+Verify that Docker CE is installed correctly by running the hello-world image
+------------------------------------------------------------------------------
+
+sudo docker run hello-world
+
+Find the version of Docker
+--------------------------
+
+sudo docker --version
+
+If you would like to use Docker as a non-root user, you should now consider adding your user to the “docker” group with something like
+--------------------------------------------------------------------------------------------------------------------------------------
+
+sudo usermod -aG docker your-user
+
+To view the switches available to a specific command, type
+----------------------------------------------------------
+
+docker docker-subcommand --help
+
+
+Check Docker service
+--------------------
+
+sudo /etc/init.d/docker status
+
+You can search for images available on Docker Hub by using the docker command with the search subcommand.
+For example, to search for the Ubuntu image, type:
+--------------------------------------------------
+
+docker search ubuntu
+
+
+you can download it to your computer using the pull subcommand, like so
+------------------------------------------------------------------------
+
+docker pull ubuntu
+
+After an image has been downloaded, you may then run a container using the downloaded image with the run subcommand
+If an image has not been downloaded when docker is executed with the run subcommand, the Docker client will first download the image, then run a container using it
+-------------------------------------------------------------------------------------------------------------------------------------
+
+sudo docker run debian
+
+
+To see the images that have been downloaded to your computer, type
+-------------------------------------------------------------------
+
+sudo docker images
+
+Login to Docker Container:-
+---------------------------
+
+sudo docker run -it centos
+
+[root@f30ae3cc53f9 /]#
+
+Please note this id f30ae3cc53f9 ----> hostname
+
+yum install net-tools -y
+
+exit
+
+From Host machine you need to give commit command for the changes
+------------------------------------------------------------------
+
+sudo docker commit -m "ifconfig changes" -a "yogesh" a34129af1ad9 finid/centos-net-tools
+
+
+Check the image now
+-------------------
+
+sudo docker images
+
+
+How to change repository name ( rename ) in Docker
+--------------------------------------------------
+
+sudo docker images
+
+REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
+finid/centos-net-tools   latest              9906497424c6        4 seconds ago       471MB
+centos                   latest              75835a67d134        4 days ago          200MB
+hello-world              latest              4ab4c602aa5e        5 weeks ago         1.84kB
+debian                   latest              f2aae6ff5d89        5 weeks ago         101MB
+
+
+docker tag 9906497424c6 centos-latestchanges:latest
+
+
+
+Remove old repository
+----------------------
+
+sudo docker rmi finid/centos-net-tools
+
+
+After using Docker for a while, you'll have many active (running) and inactive containers on your computer. 
+To view the active ones, use:
+-----------------------------------------------------------------------------------------------------------
+
+sudo docker ps
+
+
+
+To view all containers — active and inactive, pass it the -a switch:
+--------------------------------------------------------------------
+
+sudo docker ps -a
+
+
+To view the latest container you created, pass it the -l switch
+---------------------------------------------------------------
+
+sudo docker ps -l
+
+
+Stop Active container
+---------------------
+
+docker stop container-id
+
+start Active container
+----------------------
+
+docker start container-id
+ 
+
+In Docker, what's the difference between a container and an image?
+------------------------------------------------------------------
+
+An image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime
+
+A container is an active (or inactive if exited) stateful instantiation of an image.
+
+
+
+
+
+
+
