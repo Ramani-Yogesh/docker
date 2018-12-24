@@ -1,3 +1,16 @@
+==============
+
+   
+   **_Docker Installation_**
+ 
+
+
+
+==============
+                 
+
+
+
 **Requirements**
 
 To install Docker CE, you need the 64-bit version of one of these Ubuntu versions:
@@ -57,8 +70,29 @@ You can install Docker CE in different ways, depending on your needs:
 
        $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
        
-5. Update the package 
-
-       sudo apt-get update
        
-6.               
+####INSTALL DOCKER CE
+
+1. Update the package 
+
+       sudo apt-get update 
+       
+2. Install the latest version of Docker CE,
+
+       $ sudo apt-get install docker-ce
+     
+#####To install a specific version of Docker CE, list the available versions in the repo, then select and install:
+
+a. List the versions available in your repo:
+
+    $ apt-cache madison docker-ce
+   
+b. Install a specific version by its fully qualified package name, which is package name (docker-ce) “=” version string (2nd column), for example, docker-ce=18.03.0~ce-0~ubuntu.
+
+    $ sudo apt-get install docker-ce=<VERSION>
+    
+    
+
+ 
+      
+         
