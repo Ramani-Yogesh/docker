@@ -92,7 +92,10 @@ b. Install a specific version by its fully qualified package name, which is pack
     $ sudo apt-get install docker-ce=<VERSION>
     
     
+**Docker Group**
 
- 
+If you would like to use Docker as a non-root user, you should now consider adding your user to the “docker” group with something like:
+   
+    $ sudo usermod -aG docker user_name
       
          
