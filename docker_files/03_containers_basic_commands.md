@@ -1,3 +1,13 @@
+=========================================
+
+   
+   ##**Docker Containers**
+ 
+
+
+
+=========================================
+
 * **List Containers**  
     
     *__List running containers__*
@@ -104,10 +114,8 @@
                 
         docker start con_name
         
-        docker container attach con_name      
-                
-        
-        
+        docker container attach con_name
+                        
 * **Inspect Containers**        
    
     This command is used to get  all details of the container.
@@ -155,19 +163,40 @@
         
         docker unpause con_name
         
+* **Import/Export Containers**
+
+    After import the tar file, it will create as a image. Then
+    you will run a container from that image
+
+    *__Export containers__*        
+
+        docker export -o backup.tar con_name
+        
+    *__Import containers__*
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   *__Import Images__*
+        docker import /path/backup.tar new_image_name:tag
     
-    import the contents from tar, to create a new filesystem image
+    *__Run containers from Imported Images__*
     
-        docker import  /path/backup.tar new_imagename:tag
+    If you want to access the information within the container, 
+    or just want to create a container based on an imported image 
+    you can do it givin it an entrypoint command.
+    
+        docker container run -it new_image_name:tag bash
+        
+                or
+                
+        docker container run -itd --entrypoint=bash new_image_name:tag
+        
+    This is because what the export/import command does, it just 
+    saves the filesystem, this means it will remove the entrypoint 
+    command as well as its history and the layers of the built container,
+    effectively flattening the image.
+    
+    *__Import from Remote location__*
+    
+        docker import http://example.com/backup.tar new_image_name:tag
+        
+    *__Import with comment__*   
+    
+        docker import -m "message" /path/backup.tar new_image_name:tag

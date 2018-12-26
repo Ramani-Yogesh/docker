@@ -1,3 +1,13 @@
+=========================================
+
+   
+   ##**Docker Images**
+ 
+
+
+
+=========================================
+
 * **Pull Images**
 
         docker pull image_name 
@@ -11,6 +21,8 @@
         docker pull --all-tags image_name
         
 * **List Images**
+
+    Here you can view the image name, tag name, image id and size.
 
         docker images
         
