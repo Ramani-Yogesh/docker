@@ -99,7 +99,7 @@
 
           docker logout
 
-* **Import images**
+* **Save and restore images**
 
     *__Save images as tar file__*
     
@@ -110,11 +110,10 @@
      load an image from a tar archive
      
         docker load -i backup.tar
+        
+     After this command you can check your docker images. Then you can run 
+     containers using this image.
              
-    *__Import Images__*
-    
-    import the contents from tar, to create a new filesystem image
-    
-        docker import  /path/backup.tar new_imagename:tag
+ 
         
            
