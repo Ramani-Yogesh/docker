@@ -37,12 +37,12 @@
                 
         docker run -it image_name
         
-    Use this command, It will create a new container with name 'test' and
+    Use below command, It will create a new container with name 'test' and
     login directly
    
         docker container run --name test -it image_name
         
-    Use this command, It will create a new container with name 'test1' and
+    Use below command, It will create a new container with name 'test1' and
     login automatically, once you exit from the container, it will remove 
     automatically.
    
@@ -81,8 +81,7 @@
 * **Attach Containers**
 
     You can login to the existing container, using attach command.
-    If you want to attach the container, that container must in 
-    running stage.
+    If you want to attach the container, you need to start the container.
 
         docker container attach con_name 
         
@@ -91,7 +90,7 @@
     This command is used to create  a container. You can check the 
     container status using "**docker container ls -a**"
     
-        docker create -it image_name
+        docker create -it image_name 
             
                 or
                 
@@ -102,6 +101,7 @@
         docker create -it --name=con_name image_name
         
                 or
+                
         docker container create -it --name=con_name image_name
         
     After you create a container, this is in "created" stage.(You 
@@ -113,6 +113,8 @@
                 or
                 
         docker start con_name
+        
+    Then connect to your container.
         
         docker container attach con_name
                         
@@ -149,6 +151,8 @@
                 or
                 
         docker rm con_name
+        
+    Before this, you need to stop the container.
         
 * **Prune Containers**
        

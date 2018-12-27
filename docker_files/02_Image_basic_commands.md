@@ -23,8 +23,12 @@
 * **List Images**
 
     Here you can view the image name, tag name, image id and size.
-
-        docker images
+    
+    tag ==> Every image have a tag. The default tag name is "latest".
+    
+    If we are not mention any tag name, it takes the name "latest"
+    
+         docker images
         
    *__Show all images (default hides intermediate images)__*
     
@@ -94,6 +98,7 @@
       Before push you need to login to your "docker hub" account
     
       It will ask the username and password of your docker hub account.
+      [Login informations are stored in ~/.docker/config.json]
      
           docker login 
         

@@ -63,4 +63,8 @@
         
 * **View Live Stream**
 
-        docker stats con_name
+    The below commands shows the %CPU, %Memory
+
+        docker stats con_name 
+        
+        docker stats --no-stream con_name
