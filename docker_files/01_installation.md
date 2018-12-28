@@ -23,13 +23,13 @@ To install Docker CE, you need the 64-bit version of one of these Ubuntu version
 
 Docker CE is supported on Ubuntu on x86_64, armhf, s390x (IBM Z), and ppc64le (IBM Power) architectures.
 
-#####Uninstall old versions
+* **Uninstall old versions**
 
 Older versions of Docker were called **docker** or **docker-engine.** If these are installed, uninstall them:
 
     $ sudo apt-get remove docker docker-engine docker.io
     
-#####Supported storage drivers
+* **Supported storage drivers**
  
  Docker CE on Ubuntu supports **overlay2** and **aufs** storage drivers.
 
@@ -47,7 +47,7 @@ You can install Docker CE in different ways, depending on your needs:
 
    * In testing and development environments, some users choose to use automated **convenience scripts** to install Docker.
 
-###Install using the repository
+* **Install using the repository**
 
    Before you install Docker CE for the first time on a new host machine, you need to set up the Docker repository. Afterward, you can install and update Docker from the repository.
    
@@ -71,7 +71,7 @@ You can install Docker CE in different ways, depending on your needs:
        $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
        
        
-####INSTALL DOCKER CE
+* **INSTALL DOCKER CE**
 
 1. Update the package 
 
@@ -81,7 +81,7 @@ You can install Docker CE in different ways, depending on your needs:
 
        $ sudo apt-get install docker-ce
      
-#####To install a specific version of Docker CE, list the available versions in the repo, then select and install:
+* **To install a specific version of Docker CE, list the available versions in the repo, then select and install**
 
 a. List the versions available in your repo:
 
