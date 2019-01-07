@@ -48,6 +48,10 @@
 
     You can also use image_id instead of image_name
     
+        docker image inspect httpd
+        
+                or
+    
         docker inspect httpd
         
 * **Show the History of the Image**
