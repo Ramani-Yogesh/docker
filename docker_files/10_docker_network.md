@@ -118,7 +118,7 @@
                     
         docker container run -itd --name testing --network=my_network1 --ip 10.0.0.8 httpd     
     
-  - If you assign the network when create a container, this will not connect with the default network "bridge".
+  - If you assign the network when create a container, this will not connect with the default network "**bridge**".
   
 * **Remove Network**
 
