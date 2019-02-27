@@ -151,9 +151,9 @@ The above command remove all unused networks & not used by atleast one container
    - The 'test1' container should connect with default network "**bridge**"
    
         
-        docker container attach test2
+            docker container attach test2
         
-        [root@34873294732847]# cat /etc/hosts
+            [root@34873294732847]# cat /etc/hosts
         
    (Here you can see the "test1" container's host entry)
         
