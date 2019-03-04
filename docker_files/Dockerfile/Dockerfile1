@@ -1,0 +1,25 @@
+FROM ubuntu:16.04
+
+MAINTAINER ramani <ramani@perfios.com>
+
+RUN apt-get update && apt-get dist-upgrade -y && apt-get install vim iputils-ping net-tools curl -y &&  apt-get install apache2 -y
+
+ENV doc_root /var/www/html
+
+RUN mv ${doc_root}/index.html ${doc_root}/default_file
+
+RUN echo "Working Successfully" >> ${doc_root}/index.php
+
+#RUN /etc/init.d/apache2 restart
+
+ADD http://192.168.10.182/index.html /root
+
+COPY 	1.php ${doc_root} 
+
+VOLUME /home/ramani/docker_files/link
+
+EXPOSE 80 443
+
+CMD cat /etc/hosts
+
+
