@@ -10,7 +10,7 @@ RUN mv ${doc_root}/index.html ${doc_root}/default_file
 
 RUN echo "Working Successfully" >> ${doc_root}/index.php
 
-#RUN /etc/init.d/apache2 restart
+RUN /etc/init.d/apache2 restart
 
 ADD http://192.168.10.182/index.html /root
 
