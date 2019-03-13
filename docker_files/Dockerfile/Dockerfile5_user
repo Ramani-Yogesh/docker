@@ -1,0 +1,6 @@
+FROM ubuntu:16.04
+RUN useradd -m -d /home/ramani -s /bin/bash ramani
+RUN echo  "ramani\nramani" | passwd ramani
+RUN apt-get update && apt-get install sudo
+RUN echo "ramani ALL=(ALL:ALL) ALL" >> /etc/sudoers
+USER ramani
