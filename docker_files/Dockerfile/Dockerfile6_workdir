@@ -1,0 +1,6 @@
+FROM ubuntu:16.04
+WORKDIR /home
+WORKDIR /bin
+WORKDIR /opt
+WORKDIR /var
+WORKDIR /etc
